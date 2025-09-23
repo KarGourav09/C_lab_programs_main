@@ -6,28 +6,49 @@ elements in an array.
 
 int main()
 {
-    int N,temp,count = 0;
-    printf("Enter the size of array(N)\n");
+    int N, count = 0;
+    printf("Enter the size of array(N): ");
     scanf("%d", &N);
 
-    int arr[N], dup[count];
+    int arr[N], freq[N];
 
+    // Input array elements
     for(int i = 0; i < N; i++)
     {
-        printf("Enter the number%d:", i);
+        printf("Enter number %d: ", i);
         scanf("%d", &arr[i]);
+        freq[i] = -1; // Initialize frequency array
     }
-        for(int k = 0; k < N; k++)
+
+    // Count frequency of each element
+    for(int i = 0; i < N; i++)
+    {
+        int c = 1;
+        for(int j = i + 1; j < N; j++)
         {
-            for(int j = k + 1; j < N; j++)
-        {
-            if(arr[k] == arr[j])
+            if(arr[i] == arr[j])
             {
-                count++;
-                dup[k] = arr[k];
+                c++;
+                freq[j] = 0; // Mark as counted
             }
         }
-        }
-    printf("%d number of duplicates are there", count);
+        if(freq[i] != 0)
+            freq[i] = c;
+    }
+
+    // Count how many elements are duplicates
+    for(int i = 0; i < N; i++)
+    {
+        if(freq[i] > 1)
+            count++;
+    }
+
+    printf("Total number of duplicate elements: %d\n", count);
+    printf("The duplicate elements are:\n");
+    for(int i = 0; i < N; i++)
+    {
+        if(freq[i] > 1)
+            printf("%d ", arr[i]);
+    }
     return 0;
 }
