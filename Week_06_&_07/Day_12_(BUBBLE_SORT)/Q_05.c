@@ -5,7 +5,7 @@ largest element in an array.*/
 
 int main()
 {
-    int N,temp = 0,largest = 0,second_largest = 0;
+    int N,temp = 0;
     printf("Enter the size of array(N)\n");
     scanf("%d", &N);
 
@@ -16,6 +16,9 @@ int main()
         printf("Enter the number r%d:", i);
         scanf("%d", &arr[i]);
     }
+
+    int largest = arr[0],second_largest = arr[0];
+
     for(int j = 0; j < N - 1; j++)
     {
         if(arr[j] > arr[j + 1])
@@ -53,6 +56,7 @@ int main()
         else
         {
             printf("Repeatative numbers are there, %d %d", arr[j],arr[j + 1]);
+            return 1;
         }
     }
     printf("The Second Largest number in the Array is:%d\n",second_largest);
