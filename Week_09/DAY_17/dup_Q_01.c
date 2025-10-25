@@ -1,4 +1,4 @@
-/*  A Fibonacci sequence is defined as follows: the first and second terms in the sequence are 0 and 1. Subsequent terms are found by adding the preceding two terms in the sequence (Fi = Fi-1 + Fi-2).WAP to find out the value of nth term of the Fibonacci sequence by writing a suitable user defined function.*/
+/*WAP to find out the value of nth term of the Fibonacci sequence by writing a suitable user defined function without recursion.*/
 
 #include <stdio.h>
 int Fibo(int n);
@@ -17,8 +17,16 @@ int Fibo(int n) {
     if (n == 0) {
         return 0;
     }
-    else if (n == 1) {
+    if (n == 1) {
         return 1;
     }
-    return Fibo(n - 1) + Fibo(n - 2);
+    int a = 0;
+    int b = 1;
+    int c;
+    for (int i = 2; i <= n; i++) {
+        c = a + b;
+        a = b;
+        b = c;
+    }
+    return b;
 }
