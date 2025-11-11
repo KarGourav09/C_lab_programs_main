@@ -15,46 +15,7 @@ int main() {
 }
 void max(int a,int b,int c)
 {
-    if(a == b)
-    {
-        if(a == c)
-    {
-        printf("All three are equal\n");
-    }   
-    else if(a>c)
-    {
-        printf("a is equal to b and greater than c\n");
-    }
-    else{
-        printf("a is equal to b but less than c\n");
-    }
-    }   
-    else if(a>b)
-    {
-        if(a == c)
-    {
-        printf("a is greater than b and equal to c\n");
-    }   
-    else if(a>c)
-    {
-        printf("a is greater than b and c\n");
-        printf("a is the greatest value\n");
-    }
-    else{
-        printf("a is greater than b but less than c\n");
-        printf("c is the greatest\n");
-    }
-    }
-    else{
-        if(b>c)
-        {
-            printf("b is greater than a and c\n");
-            printf("b is the greatest\n");
-        }
-        else{
-            printf("c is greater than a and b\n");
-            printf("c is the greatest\n");
-        }
-    }
-
+    if (a > b && a > c) { printf("a is the greatest\n"); return; }
+    if (b > a && b > c) { printf("b is the greatest\n"); return; }
+    if (c > a && c > b) { printf("c is the greatest\n"); return; }
 }
