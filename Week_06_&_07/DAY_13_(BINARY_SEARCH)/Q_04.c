@@ -31,9 +31,9 @@ int main() {
             if(j <= i)
             {
                  printf("%d ", arr[i][j]);
-                 printf("\n");
             }
         }
+        printf("\n");
     }
     printf("The elements in the lower triangle are: \n");
 
@@ -44,9 +44,9 @@ int main() {
             if(j >= i)
             {
                  printf("%d ", arr[i][j]);
-                 printf("\n");
             }
         }
+        printf("\n");
     }
 
     return 0;
